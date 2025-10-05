@@ -68,8 +68,10 @@ TEMPLATES = [
             ],
         },
     },
+] 
+CORS_ALLOWED_ORIGINS = [
+    "https://sudarshanadhikari.info.np",
 ]
-CORS_ALLOW_ALL_ORIGINS = True
 WSGI_APPLICATION = 'djangoproject1.wsgi.application'
 
 
