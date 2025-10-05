@@ -86,9 +86,15 @@ WSGI_APPLICATION = 'djangoproject1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=os.environ.get('DATABASE_URL', 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3'))
+#     )
+# }
+# temporarily in settings.py
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL', 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3'))
+        default='postgresql://django_db_yv39_user:IAogyzcspH68fSuX1CWB3cbwmDC3PLHT@dpg-d3h3snvfte5s73cjtth0-a/django_db_yv39'
     )
 }
 

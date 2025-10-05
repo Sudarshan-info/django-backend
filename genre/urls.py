@@ -22,3 +22,12 @@ urlpatterns = [
     path('api/', include(router.urls)),
 ]
 
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('collections/', views.CollectionList.as_view(), name='collection-list'),
+    path('run-migrations/', views.run_migrations, name='run-migrations'),  # temporary
+]
+

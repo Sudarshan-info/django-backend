@@ -54,5 +54,17 @@ class PieceViewSet(viewsets.ModelViewSet):
     queryset = Piece.objects.all()
     serializer_class = PieceSerializer
 
+from django.http import HttpResponse
+from django.core.management import call_command
+
+def run_migrations(request):
+    try:
+        call_command('makemigrations')
+        call_command('migrate')
+        return HttpResponse("✅ Migrations applied successfully!")
+    except Exception as e:
+        return HttpResponse(f"❌ Error: {str(e)}")
+
+
 
     
